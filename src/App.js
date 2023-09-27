@@ -1,12 +1,13 @@
 import './App.css'
 import { useEffect } from 'react'
 import { Game } from './components/game'
-import { store } from './store'
+import { useDispatch } from 'react-redux'
 
 function App() {
+  const dispatch = useDispatch()
   useEffect(() => {
-    store.dispatch({ type: 'NEW_GAME', payload: '' })
-  }, [])
+    dispatch()
+  }, [dispatch])
 
   return <Game />
 }
